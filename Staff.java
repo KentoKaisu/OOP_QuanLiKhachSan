@@ -1,6 +1,3 @@
-package DO_AN_FIX;
-
-import java.util.Date;
 import java.text.DecimalFormat;
 
 public class Staff {
@@ -9,21 +6,31 @@ public class Staff {
         private String midName;
         private String lastName;
         private double salary;
-
-
+        private String sex;
 
         public Staff(){}
+        public Staff(int staffID, String firstName, String midName, String lastName, double salary, String sex) {
+        this.staffID = staffID;
+        this.firstName = firstName;
+        this.midName = midName;
+        this.lastName = lastName;
+        this.salary = salary;
+        setSex(sex);  // Sử dụng phương thức setSex để đảm bảo giới tính hợp lệ
+    }
 
-        public Staff(int staffID, String firstName, String midName, String lastName, double salary) {
-            this.staffID = staffID;
-            this.firstName = firstName;
-            this.midName = midName;
-            this.lastName = lastName;
-            this.salary = salary;
-
+        public void setSex(String sex) {
+            if (sex.equalsIgnoreCase("Nam") || sex.equalsIgnoreCase("Nữ") || sex.equalsIgnoreCase("Khác")) {
+                this.sex = sex;
+            } else {
+                throw new IllegalArgumentException("Giới tính phải là 'Nam', 'Nữ' hoặc 'Khác'.");
+            }
         }
 
-        public int getStaffID() {
+    public String getSex() {
+        return sex;
+    }
+
+    public int getStaffID() {
             return staffID;
         }
 
@@ -76,9 +83,9 @@ public class Staff {
                 ", midName='" + midName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", salary=" + df.format(salary) +
+                ", sex='" + sex + '\'' +
                 '}';
     }
 
 
 }
-
