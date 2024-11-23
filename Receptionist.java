@@ -1,5 +1,3 @@
-package DO_AN_FIX;
-
 public class Receptionist extends User{
     public Receptionist() {
         super("receptionist", "12345" , "RECEPTIONIST");
