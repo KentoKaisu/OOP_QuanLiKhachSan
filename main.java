@@ -1,5 +1,3 @@
-package DO_AN_FIX;
-
 import java.util.Scanner;
 
 public class main {
