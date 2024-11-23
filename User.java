@@ -1,5 +1,3 @@
-package DO_AN_FIX;
-
 public abstract class User {
     private String role;
     private String username;
